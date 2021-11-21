@@ -100,7 +100,7 @@ public class StaffService implements WareHouse<Staff, String> {
                 staff.setDienThoai(rs.getString("Email"));
                 staff.setNgaySinh(rs.getDate("NgaySinh"));
                 staff.setVaiTro(rs.getBoolean("VaiTro"));
-                staff.setVaiTro(rs.getBoolean("MaNhanVien"));
+               // staff.setVaiTro(rs.getBoolean("MaNhanVien"));
 
                 listStaffs.add(staff);
 
