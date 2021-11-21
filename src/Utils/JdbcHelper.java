@@ -15,22 +15,21 @@ import java.sql.SQLException;
  * @author Minh
  */
 public class JdbcHelper {
+     private static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+    private static String dburl = "jdbc:sqlserver://localhost\\ABC;database=QLBH";    
+    private static String username = "sa";
+    private static String password = "sa";
 
-    private static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    private static String dburl = "jdbc:sqlserver://DESKTOP-71LD6R6\\SQLEXPRESS:1433;databaseName=QLBH";
-    private static String username = "HoangTue";
-    private static String password = "hoangtue1998";
-
-    static {
+     static {
         try {
             Class.forName(driver);
         } catch (ClassNotFoundException ex) {
             throw new RuntimeException(ex);
         }
     }
-
-    public static PreparedStatement prepareStatement(String sql, Object... args) throws SQLException {
-        Connection connection = DriverManager.getConnection(dburl, username, password);
+     
+     public static PreparedStatement prepareStatement(String sql, Object... args) throws SQLException {
+         Connection connection = DriverManager.getConnection(dburl, username, password);
         PreparedStatement pstmt = null;
         if (sql.trim().startsWith("{")) {
             pstmt = connection.prepareCall(sql);
@@ -42,14 +41,13 @@ public class JdbcHelper {
         }
         return pstmt;
     }
-
-    public static void executeUpdate(String sql, Object... args) {
+     
+     public static void executeUpdate(String sql, Object... args) {
         try {
-
+     
             PreparedStatement stmt = prepareStatement(sql, args);
             try {
                 stmt.executeUpdate();
-//                System.out.println(stmt.executeUpdate());
             } finally {
                 stmt.getConnection().close();
             }
@@ -57,8 +55,8 @@ public class JdbcHelper {
             throw new RuntimeException(e);
         }
     }
-
-    public static ResultSet executeQuery(String sql, Object... args) {
+     
+      public static ResultSet executeQuery(String sql, Object... args) {
         try {
             PreparedStatement stmt = prepareStatement(sql, args);
             return stmt.executeQuery();

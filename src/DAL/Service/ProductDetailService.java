@@ -66,7 +66,7 @@ public class ProductDetailService implements WareHouse<ProductDetail, String>{
                     productDetail.setTenSanPham(rs.getString("TenSanPham"));
                     productDetail.setSoLuong(rs.getInt("SoLuong"));
                     productDetail.setGiaNhap(rs.getInt("GiaNhap"));
-                    productDetail.setGiaNhap(rs.getInt("GiaBan"));
+                    productDetail.setGiaBan(rs.getInt("GiaBan"));
                     productDetail.setMaSanPham(rs.getString("MaSanPham"));
                     productDetail.setMaTheLoai(rs.getString("MaTheLoai"));
                     productDetail.setMaSize(rs.getInt("maSize"));

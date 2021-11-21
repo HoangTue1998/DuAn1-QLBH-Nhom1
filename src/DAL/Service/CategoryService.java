@@ -27,8 +27,8 @@ public class CategoryService implements WareHouse<Category, String>{
 
     @Override
     public void update(Category entity) {
-        String sql ="Update Category set MaTheLoai = ? , TrangThai = ? where MaTheLoai = ?";
-        JdbcHelper.executeUpdate(sql, entity.getMaTheLoai(), entity.getMaTheLoai());
+        String sql ="Update Category set TenTheLoai = ? , TrangThai = ? where MaTheLoai = ?";
+        JdbcHelper.executeUpdate(sql, entity.getTenTheLoai(), entity.isTrangThai(), entity.getMaTheLoai());
     }
 
     @Override

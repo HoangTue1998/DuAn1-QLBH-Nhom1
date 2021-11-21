@@ -72,6 +72,8 @@ public class Product {
     public void setIsDelete(boolean isDelete) {
         this.isDelete = isDelete;
     }
+    
+    
 
     public Product() {
     }
