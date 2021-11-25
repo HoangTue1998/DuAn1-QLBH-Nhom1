@@ -269,6 +269,8 @@ public class Home extends javax.swing.JFrame {
 
     private void btnNhanvienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNhanvienActionPerformed
         // TODO add your handling code here:
+        Thongtintaikhoan tttk = new Thongtintaikhoan();
+        tttk.setVisible(true);
     }//GEN-LAST:event_btnNhanvienActionPerformed
 
     private void btnSanphamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSanphamActionPerformed

@@ -16,7 +16,8 @@ import java.sql.SQLException;
  */
 public class JdbcHelper {
      private static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    private static String dburl = "jdbc:sqlserver://localhost\\ABC;database=QLBH";    
+//    private static String dburl = "jdbc:sqlserver://localhost;database=QLBH";  
+     private static String dburl="jdbc:sqlserver://localhost\\Admin:1433;databaseName=QLBH";
     private static String username = "sa";
     private static String password = "123";
 
