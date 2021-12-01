@@ -37,7 +37,6 @@ public class ProducSeviceDTO {
     public List<ProductDTO> getAll() {
         List<Product> listProduct = service.selectALL();
         List<ProductDTO> lisProDTO = new ArrayList<>();
-        System.out.println(findCategory("1"));
         
         for (Product x : listProduct) {          
             if(x.getTrangThai() == 1){
@@ -102,7 +101,7 @@ public class ProducSeviceDTO {
             e.setGiaNhap(x.getGiaNhap());
             e.setGiaBan(x.getGiaBan());
             e.setMaSPCT(x.getMaSanPhamChiTiet());
-            
+            System.out.print(e.getGiaBan());
             lis2.add(e);
         }
         }
@@ -135,10 +134,31 @@ public class ProducSeviceDTO {
     public void updateProductDetail(ProductDetail p){
         
         productDetailService.update(p);
-        
+       
     }
     
+    public void deleteSoft(String id){
+        String sql  = "	update product set trangThai = 0 where MaSanPham = ?";
+        JdbcHelper.executeUpdate(sql, id);  
+    }
     
-            
+    public List<Product> listBin(){
+        String sql =  "Select * from product where trangThai = 0";
+        return service.selectbySQL(sql);
+    }
+    
+    public void restoreProduct(String id){
+         String sql  = "update product set trangThai = 1 where MaSanPham = ?";
+        JdbcHelper.executeUpdate(sql, id);  
+    }  
+    
+    public void deleteSoftProductDetail(String id){
+               String sql  = "update Product_Detail set trangThai = 0 where MaSanPhamChiTiet = ?";
+                       JdbcHelper.executeUpdate(sql, id);  
+    }
+    public List<Product> finbyName(String name ){
+        String sql = "select * from Product where TenSanPham like concat('%',?,'%') and trangThai =1";
+        return service.selectbySQL(sql, name);
+    }
 
 }

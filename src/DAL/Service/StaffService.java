@@ -46,7 +46,7 @@ public class StaffService implements WareHouse<Staff, String> {
                 entity.getMatKhau(),
                 entity.isGioiTinh(),
                 entity.getDiaChi(),
-                entity.getDiaChi(),
+                entity.getDienThoai(),
                 entity.getEmail(),
                 entity.getNgaySinh(),
                 entity.isVaiTro(),
@@ -74,7 +74,7 @@ public class StaffService implements WareHouse<Staff, String> {
 
     @Override
     public Staff select_by_id(String key) {
-        String sql = "delete from Staff where MaNhanVien =?";
+        String sql = "select * from Staff where MaNhanVien =?";
         List<Staff> list = selectbySQL(sql, key);
         if (list.isEmpty()) {
             return null;
@@ -97,10 +97,11 @@ public class StaffService implements WareHouse<Staff, String> {
                 staff.setTenNhanVien(rs.getString("TenNhanVien"));
                 staff.setGioiTinh(rs.getBoolean("GioiTinh"));
                 staff.setDiaChi(rs.getString("DiaChi"));
-                staff.setDienThoai(rs.getString("Email"));
+                staff.setDienThoai(rs.getString("DienThoai"));
+                staff.setEmail(rs.getString("Email"));
                 staff.setNgaySinh(rs.getDate("NgaySinh"));
                 staff.setVaiTro(rs.getBoolean("VaiTro"));
-                staff.setVaiTro(rs.getBoolean("MaNhanVien"));
+               // staff.setVaiTro(rs.getBoolean("MaNhanVien"));
 
                 listStaffs.add(staff);
 

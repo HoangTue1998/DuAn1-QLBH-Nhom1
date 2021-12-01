@@ -21,15 +21,15 @@ public class ColorService implements WareHouse<Color, Integer>{
 
     @Override
     public void insert(Color entity) {
-       String sql  = "insert into color(temMau) values (?)";
-       JdbcHelper.executeUpdate(sql, entity.getTenMau());
+       String sql  = "insert into color(temMau, trangThai)  values (?,?)";
+       JdbcHelper.executeUpdate(sql, entity.getTenMau(), entity.isTrangThai());
                
     }
 
     @Override
     public void update(Color entity) {
-        String sql = "update from color set tenMau =?, TrangThai=? where  maMau=?";
-        JdbcHelper.executeUpdate(sql, entity.getTenMau(), entity.getTenMau(), entity.getMaMau());
+        String sql = "update color set temMau =?, TrangThai=? where  maMau=?";
+        JdbcHelper.executeUpdate(sql, entity.getTenMau(), entity.isTrangThai(), entity.getMaMau());
     }
 
     @Override
@@ -40,7 +40,7 @@ public class ColorService implements WareHouse<Color, Integer>{
 
     @Override
     public List<Color> selectALL() {
-         return selectbySQL("select * from color");
+         return selectbySQL("select * from color where trangThai =1");
     }
 
     @Override

@@ -21,8 +21,8 @@ public class ClientService implements WareHouse<Client, String>{
 
     @Override
     public void insert(Client entity) {
-        String sql ="insert into Client(MaKhachHang, TenKhachHang, DiaChi, DienThoai) values ( ?,?,?,?);";
-        JdbcHelper.executeUpdate(sql, entity.getMaKhachHang(),
+        String sql ="insert into Client( TenKhachHang, DiaChi, DienThoai) values ( ?,?,?);";
+        JdbcHelper.executeUpdate(sql, 
                                         entity.getTenKhachHang(),
                                         entity.getDiaChi(),
                                         entity.getDienThoai());
@@ -66,10 +66,10 @@ public class ClientService implements WareHouse<Client, String>{
             ResultSet rs = JdbcHelper.executeQuery(sql, arg);
             while (rs.next()) {
                 Client client = new Client();
-                client.setMaKhachHang(rs.getString("MaKhachHang"));
-                client.setMaKhachHang(rs.getString("TenKhachHang"));
-                client.setMaKhachHang(rs.getString("DiaChi"));
-                client.setMaKhachHang(rs.getString("DienThoai"));
+                client.setMaKhachHang(rs.getInt("MaKhachHang"));
+//                client.setMaKhachHang(rs.getString("TenKhachHang"));
+//                client.setMaKhachHang(rs.getString("DiaChi"));
+//                client.setMaKhachHang(rs.getString("DienThoai"));
                 listClient.add(client); 
             }
         } catch (SQLException ex) {
@@ -77,6 +77,8 @@ public class ClientService implements WareHouse<Client, String>{
         }
         return listClient;
     }
+
+  
     
     
 }

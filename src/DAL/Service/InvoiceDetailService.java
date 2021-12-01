@@ -22,8 +22,14 @@ public class InvoiceDetailService implements WareHouse<InvoiceDetail, String>{
     @Override
     public void insert(InvoiceDetail entity) {
         String sql ="insert into  Detailed_Invoice (MaHoaDon, MaSanPhamChiTiet, SoLuong, DonGia, GiamGia, Tong) values (?,?,?,?,?,?)";
-        JdbcHelper.executeUpdate(sql, sql, entity.getMaHoaDon(), entity.getMaSanPhamChiTiet(), entity.getSoLuong(), entity.getDonGia(), entity.getGiamGia(), entity.getTong());
+        JdbcHelper.executeUpdate(sql, entity.getMaHoaDon(), entity.getMaSanPhamChiTiet(), entity.getSoLuong(), entity.getDonGia(), entity.getGiamGia(), entity.getTong());
     }
+    
+//      @Override
+//    public void insert(Invoice entity) {
+//        String sql ="insert into Invoice( MaNhanVien,NgayBan, MaKhachHang, TongTien) values(?,?,?,?)";
+//        JdbcHelper.executeUpdate(sql, entity.getMaNhanVien(),entity.getNgayBan(),entity.getMaKhachHang(), entity.getTongTien());
+//    }
 
     @Override
     public void update(InvoiceDetail entity) {
@@ -74,6 +80,8 @@ public class InvoiceDetailService implements WareHouse<InvoiceDetail, String>{
         }
         return list;
     }
+
+  
     
     
 }

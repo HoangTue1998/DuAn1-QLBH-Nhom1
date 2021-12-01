@@ -12,7 +12,6 @@ public class CategoryDTO {
 
     private String maTheloai;
     private String tenTheloai;
-    private boolean trangThai = false;
 
     public CategoryDTO() {
     }
@@ -38,13 +37,9 @@ public class CategoryDTO {
         this.tenTheloai = tenTheloai;
     }
 
-    public void setTrangThai(boolean trangThai) {
-        this.trangThai = trangThai;
-    }
+    
 
-    public boolean strangThai() {
-        return trangThai;
-    }
+
 
     @Override
     public String toString() {

@@ -77,5 +77,6 @@ public class InvoiceService implements WareHouse<Invoice, Integer>{
         }
         return listInvoices;
     }
-    
+
+  
 }

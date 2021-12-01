@@ -1,34 +1,31 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-package DAL.Entity;
+package Ui.Model;
 
 import java.util.Date;
 
 /**
  *
- * @author Minh
+ * @author tiennv
  */
-public class Invoice {
-
+public class InvoUI {
+    
     private int maHoaDon;
     private String maNhanVien;
     private Date ngayBan;
     private String MaKhachHang;
-    private float tongTien;
-    private int trangThai;
 
-    public Invoice() {
+    public InvoUI() {
     }
 
-    public Invoice(int maHoaDon, String maNhanVien, Date ngayBan, String MaKhachHang, float tongTien, int trangThai) {
+    public InvoUI(int maHoaDon, String maNhanVien, Date ngayBan, String MaKhachHang) {
         this.maHoaDon = maHoaDon;
         this.maNhanVien = maNhanVien;
         this.ngayBan = ngayBan;
         this.MaKhachHang = MaKhachHang;
-        this.tongTien = tongTien;
-        this.trangThai = trangThai;
     }
 
     public int getMaHoaDon() {
@@ -62,23 +59,5 @@ public class Invoice {
     public void setMaKhachHang(String MaKhachHang) {
         this.MaKhachHang = MaKhachHang;
     }
-
-    public float getTongTien() {
-        return tongTien;
-    }
-
-    public void setTongTien(float tongTien) {
-        this.tongTien = tongTien;
-    }
-
-    public int getTrangThai() {
-        return trangThai;
-    }
-
-    public void setTrangThai(int trangThai) {
-        this.trangThai = trangThai;
-    }
     
-    
-
 }

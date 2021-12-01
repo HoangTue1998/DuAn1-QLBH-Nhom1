@@ -26,6 +26,11 @@ public class Staff {
     public Staff() {
     }
 
+    public Staff(String taiKhoan, String matKhau) {
+        this.taiKhoan = taiKhoan;
+        this.matKhau = matKhau;
+    }
+
     public Staff(String maNhanVien, String taiKhoan, String matKhau, String tenNhanVien, boolean gioiTinh, String diaChi, String dienThoai, String email, Date ngaySinh, boolean vaiTro, boolean trangThai) {
         this.maNhanVien = maNhanVien;
         this.taiKhoan = taiKhoan;

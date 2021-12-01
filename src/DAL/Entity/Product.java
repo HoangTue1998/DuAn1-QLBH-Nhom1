@@ -16,6 +16,26 @@ public class Product {
     private String ghiChu;
     private int trangThai;
     private boolean isDelete;
+    private int maGiamGia;
+
+    public int getMaGiamGia() {
+        return maGiamGia;
+    }
+
+    public void setMaGiamGia(int maGiamGia) {
+        this.maGiamGia = maGiamGia;
+    }
+
+    public Product(String maSanPham, String tenSanPham, String maTheLoai, String anh, String ghiChu, int trangThai, boolean isDelete, int maGiamGia) {
+        this.maSanPham = maSanPham;
+        this.tenSanPham = tenSanPham;
+        this.maTheLoai = maTheLoai;
+        this.anh = anh;
+        this.ghiChu = ghiChu;
+        this.trangThai = trangThai;
+        this.isDelete = isDelete;
+        this.maGiamGia = maGiamGia;
+    }
 
     public String getMaSanPham() {
         return maSanPham;

@@ -17,9 +17,9 @@ import java.sql.SQLException;
 public class JdbcHelper {
 
     private static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    private static String dburl = "jdbc:sqlserver://DESKTOP-71LD6R6\\SQLEXPRESS:1433;databaseName=QLBH";
-    private static String username = "HoangTue";
-    private static String password = "hoangtue1998";
+    private static String dburl = "jdbc:sqlserver://DESKTOP-1T2BB3E\\SQLEXPRESS:1433;databaseName=QLBH1";
+    private static String username = "sa";
+    private static String password = "12345";
 
     static {
         try {
@@ -56,6 +56,7 @@ public class JdbcHelper {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        
     }
 
     public static ResultSet executeQuery(String sql, Object... args) {

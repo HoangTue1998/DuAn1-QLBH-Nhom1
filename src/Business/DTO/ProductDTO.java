@@ -12,6 +12,7 @@ public class ProductDTO {
     private String id; 
     private String tenSanPham;
     private String loaiSanPham;
+    private String anh;
 
     public ProductDTO() {
     }
@@ -40,11 +41,28 @@ public class ProductDTO {
         this.loaiSanPham = loaiSanPham;
     }
 
+    public ProductDTO(String id, String tenSanPham, String loaiSanPham, String anh) {
+        this.id = id;
+        this.tenSanPham = tenSanPham;
+        this.loaiSanPham = loaiSanPham;
+        this.anh = anh;
+    }
+
     public ProductDTO(String id, String tenSanPham, String loaiSanPham) {
         this.id = id;
         this.tenSanPham = tenSanPham;
         this.loaiSanPham = loaiSanPham;
+       
     }
+    public String getAnh() {
+        return anh;
+    }
+
+    public void setAnh(String anh) {
+        this.anh = anh;
+    }
+
+    
     
     
     

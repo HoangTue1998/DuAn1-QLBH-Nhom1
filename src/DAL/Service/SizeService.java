@@ -22,7 +22,7 @@ public class SizeService implements WareHouse<Size, Integer> {
     @Override
     public void insert(Size entity) {
         String sql= "insert into size(TenSize, TrangThai) values (?, ?)";
-        JdbcHelper.executeUpdate(sql, entity.getMaSize());
+        JdbcHelper.executeUpdate(sql, entity.getMaSize(), entity.isTrangThai());
     }
 
     @Override
@@ -40,7 +40,7 @@ public class SizeService implements WareHouse<Size, Integer> {
 
     @Override
     public List<Size> selectALL() {
-        return selectbySQL("select * from size");
+        return selectbySQL("select * from size where trangThai =1");
     }
 
     @Override

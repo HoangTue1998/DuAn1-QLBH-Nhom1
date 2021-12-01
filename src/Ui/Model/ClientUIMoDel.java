@@ -1,30 +1,27 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-package DAL.Entity;
+package Ui.Model;
 
 /**
  *
- * @author Minh
+ * @author tiennv
  */
-public class Client {
+public class ClientUIMoDel {
+
+  
+
     private int maKhachHang;
     private String tenKhachHang;
     private String diaChi;
     private String dienThoai;
 
-    public Client() {
+      public ClientUIMoDel() {
     }
 
-    public Client(String tenKhachHang, String diaChi, String dienThoai) {
-        this.tenKhachHang = tenKhachHang;
-        this.diaChi = diaChi;
-        this.dienThoai = dienThoai;
-    }
-
-    
-    public Client(int maKhachHang, String tenKhachHang, String diaChi, String dienThoai) {
+    public ClientUIMoDel(int maKhachHang, String tenKhachHang, String diaChi, String dienThoai) {
         this.maKhachHang = maKhachHang;
         this.tenKhachHang = tenKhachHang;
         this.diaChi = diaChi;
@@ -62,10 +59,7 @@ public class Client {
     public void setDienThoai(String dienThoai) {
         this.dienThoai = dienThoai;
     }
+      
+      
 
-    
-
-    
-    
-    
 }

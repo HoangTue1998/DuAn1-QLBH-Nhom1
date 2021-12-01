@@ -23,17 +23,19 @@ public class ProductService implements WareHouse<Product, String>{
 
     @Override
     public void insert(Product entity) {
-        String sql ="insert into Product(MaSanPham, TenSanPham, MaTheLoai, TrangThai) values (?,?, ?, ?)";
+        String sql ="insert into Product(MaSanPham, TenSanPham, MaTheLoai, Anh, TrangThai) values (?,?, ?, ?, ?)";
         JdbcHelper.executeUpdate(sql, entity.getMaSanPham(), 
                                     entity.getTenSanPham(),
-                                    entity.getMaTheLoai(),                                 
+                                    entity.getMaTheLoai(), 
+                                    entity.getAnh(),
                                     entity.getTrangThai());
     }
     @Override
     public void update(Product entity) {
-        String sql  = "update Product set TenSanPham=?, MaTheLoai =?, TrangThai =? where MaSanPham= ?";
+        String sql  = "update Product set TenSanPham=?, MaTheLoai =?, Anh =? ,TrangThai =? where MaSanPham= ?";
         JdbcHelper.executeUpdate(sql, entity.getTenSanPham(),
-                                        entity.getMaTheLoai(),                           
+                                        entity.getMaTheLoai(), 
+                                        entity.getAnh(),
                                          entity.getTrangThai(),
                                         entity.getMaSanPham());
     }
@@ -67,6 +69,7 @@ public class ProductService implements WareHouse<Product, String>{
                 product.setTenSanPham(rs.getString("TenSanPham"));
                 product.setMaTheLoai(rs.getString("MaTheLoai"));
                 product.setGhiChu(rs.getString("GhiChu"));
+                product.setAnh(rs.getString("Anh"));
                 product.setTrangThai(rs.getInt("TrangThai"));
                 product.setIsDelete(rs.getBoolean("IsDelete"));
                 listProduct.add(product);

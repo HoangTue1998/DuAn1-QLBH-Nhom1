@@ -7,6 +7,7 @@ package Ui;
 import Business.DTO.StaffDTO;
 import Business.Sevice.StaffSeviceB;
 import DAL.Entity.Staff;
+import DAL.Service.StaffService;
 import Utils.BoxDiaglog;
 import Utils.ServerHelper;
 import java.awt.Color;
@@ -19,19 +20,29 @@ import java.util.List;
 public class Login extends javax.swing.JFrame {
     
  
-    StaffSeviceB sev;
+     StaffSeviceB sev;
+     List <StaffDTO> listStaff;
+     List<Staff> listStaff2;
+     StaffService service2;
+     public static  Staff userLogIn;
+     
 
     public Login() {
         initComponents();
         setLocationRelativeTo(null);
+        service2 = new StaffService();
         sev = new StaffSeviceB();
+        listStaff = sev.getAll();
+        listStaff2 = service2.selectALL();
+        userLogIn = new Staff();
+        
+        
+         
         
         
     }
 
-    Login(Object object, boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -265,44 +276,40 @@ public class Login extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void login() {
-        List <StaffDTO> listStaff = sev.getAll();
-        String manv = txtUrser.getText();
+       
+        String taiKhoan = txtUrser.getText();
         String passw = new String(txtPassw.getPassword());
         
         
-        for(int i =0; i<listStaff.size()+1; i++){
-            if(i<listStaff.size()){
-                if(listStaff.get(i).getTaiKhoan().equals(manv) &&
-                   listStaff.get(i).getMatKhau().equals(passw)){
-                 BoxDiaglog.alert(this, "Bạn đăng nhập thành công");
-                 
+        for(int i =0; i<listStaff2.size()+1; i++){
+            if(i<listStaff2.size()){
+                if(listStaff2.get(i).getTaiKhoan().equals(taiKhoan) &&
+                   listStaff2.get(i).getMatKhau().equals(passw) &&listStaff2.get(i).isVaiTro()==true ){
+                    userLogIn.setMaNhanVien(listStaff2.get(i).getMaNhanVien());
+                    userLogIn.setTenNhanVien(listStaff2.get(i).getTenNhanVien());
+                    userLogIn.setVaiTro(true);
+                 BoxDiaglog.alert(this, "Bạn đăng nhập thành công vai trò admin");
+                 Home home = new Home(taiKhoan,listStaff2.get(i).getMaNhanVien(),listStaff2.get(i).getTenNhanVien(), passw);
+                 home.setVisible(true);
                  return;
                 }
-            }
+                
+                if(listStaff2.get(i).getTaiKhoan().equals(taiKhoan) &&
+                   listStaff2.get(i).getMatKhau().equals(passw) &&listStaff2.get(i).isVaiTro()==false ){
+                    userLogIn.setMaNhanVien(listStaff2.get(i).getMaNhanVien());
+                    userLogIn.setTenNhanVien(listStaff2.get(i).getTenNhanVien());
+                    userLogIn.setVaiTro(false);
+                 BoxDiaglog.alert(this, "Bạn đăng nhập thành công vai trò nhân viên");  
+                 Home home = new Home(taiKhoan,listStaff2.get(i).getMaNhanVien(),listStaff2.get(i).getTenNhanVien(), passw);
+                 home.setVisible(true);
+                 return;
+                }
+            }else{
             BoxDiaglog.alert(this, "Bạn đăng nhập thất bại");
+            return;
+            }
         }
         }
-        
-//        try {
-//            Staff nv = new Staff();
-//            if (nv != null) {
-//                
-//                String checkPass = nv.getMatKhau();
-//                if (passw.equals(checkPass)) {
-//                 
-//                    ServerHelper.URSER = nv;
-//                    BoxDiaglog.alert(this, "Bạn đăng nhập thành công");
-//                    this.dispose();
-//                } else {
-//                    BoxDiaglog.alert(this, "Mật khẩu không đúng?");
-//                }
-//            } else {
-//                BoxDiaglog.alert(this, "Sai tài khoản đăng nhập?");
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            BoxDiaglog.alert(this, "Lỗi truy vấn dữ liệu");
-//        }
         
     }
         

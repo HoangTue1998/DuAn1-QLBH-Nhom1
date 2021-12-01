@@ -12,14 +12,14 @@ public class InvoiceDetail {
    private int MaHoaDon;
    private String MaSanPhamChiTiet;
    private int SoLuong;
-   private int DonGia;
-   private int GiamGia;
-   private int Tong;
+   private float DonGia;
+   private float GiamGia;
+   private float Tong;
 
     public InvoiceDetail() {
     }
 
-    public InvoiceDetail(int MaHoaDon, String MaSanPhamChiTiet, int SoLuong, int DonGia, int GiamGia, int Tong) {
+    public InvoiceDetail(int MaHoaDon, String MaSanPhamChiTiet, int SoLuong, float DonGia, float GiamGia, float Tong) {
         this.MaHoaDon = MaHoaDon;
         this.MaSanPhamChiTiet = MaSanPhamChiTiet;
         this.SoLuong = SoLuong;
@@ -52,29 +52,30 @@ public class InvoiceDetail {
         this.SoLuong = SoLuong;
     }
 
-    public int getDonGia() {
+    public float getDonGia() {
         return DonGia;
     }
 
-    public void setDonGia(int DonGia) {
+    public void setDonGia(float DonGia) {
         this.DonGia = DonGia;
     }
 
-    public int getGiamGia() {
+    public float getGiamGia() {
         return GiamGia;
     }
 
-    public void setGiamGia(int GiamGia) {
+    public void setGiamGia(float GiamGia) {
         this.GiamGia = GiamGia;
     }
 
-    public int getTong() {
+    public float getTong() {
         return Tong;
     }
 
-    public void setTong(int Tong) {
+    public void setTong(float Tong) {
         this.Tong = Tong;
     }
-   
+
+    
    
 }
