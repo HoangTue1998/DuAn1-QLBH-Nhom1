@@ -137,6 +137,11 @@ public class Staff {
         this.trangThai = trangThai;
     }
 
+    @Override
+    public String toString() {
+        return "Staff{" + "maNhanVien=" + maNhanVien + ", taiKhoan=" + taiKhoan + ", matKhau=" + matKhau + ", tenNhanVien=" + tenNhanVien + ", gioiTinh=" + gioiTinh + ", diaChi=" + diaChi + ", dienThoai=" + dienThoai + ", email=" + email + ", ngaySinh=" + ngaySinh + ", vaiTro=" + vaiTro + ", trangThai=" + trangThai + '}';
+    }
+
     
     
     

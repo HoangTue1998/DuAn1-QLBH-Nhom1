@@ -19,8 +19,12 @@ public class Home extends javax.swing.JFrame {
      */
     
     public static Staff urserLogin;
+<<<<<<< HEAD
     public static String taiKhoan, maNV, tenNV, passNV;
     public Home(String taiKhoan,String maNV,String tenNV,String passNV) {
+=======
+    public Home() {
+>>>>>>> b13c9903dfa06dc1dce80d1b8ffbc8b91489c75b
         urserLogin = Login.userLogIn;
         System.out.print(urserLogin.isVaiTro());
         
@@ -30,11 +34,14 @@ public class Home extends javax.swing.JFrame {
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
         frame.setUndecorated(true);
         frame.setVisible(true);
+<<<<<<< HEAD
         this.taiKhoan = taiKhoan;
         this.maNV = maNV;
         this.tenNV = tenNV;
         this.passNV = passNV;
         jLabel1.setText(tenNV);
+=======
+>>>>>>> b13c9903dfa06dc1dce80d1b8ffbc8b91489c75b
 
     }
 
@@ -189,11 +196,14 @@ public class Home extends javax.swing.JFrame {
         jButton5.setBackground(new java.awt.Color(153, 153, 255));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/banhang.png"))); // NOI18N
         jButton5.setText("Bán hàng");
+<<<<<<< HEAD
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
+=======
+>>>>>>> b13c9903dfa06dc1dce80d1b8ffbc8b91489c75b
 
         btnNhanvien1.setBackground(new java.awt.Color(153, 153, 255));
         btnNhanvien1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/nhanviens.png"))); // NOI18N
@@ -290,7 +300,11 @@ public class Home extends javax.swing.JFrame {
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         if (BoxDiaglog.Confirm(this, "Bạn thật sự đăng xuất?")) {
+<<<<<<< HEAD
             Home home = new Home(taiKhoan, maNV, tenNV, passNV);
+=======
+            Home home = new Home();
+>>>>>>> b13c9903dfa06dc1dce80d1b8ffbc8b91489c75b
             home.dispose();
             Login logIn = new Login();
             logIn.setVisible(true);
@@ -313,11 +327,14 @@ public class Home extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton4ActionPerformed
 
+<<<<<<< HEAD
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
        HoaDon hoaDon = new HoaDon(taiKhoan, maNV, tenNV, passNV);
        hoaDon.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
+=======
+>>>>>>> b13c9903dfa06dc1dce80d1b8ffbc8b91489c75b
     /**
      * @param args the command line arguments
      */
@@ -411,7 +428,11 @@ public class Home extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+<<<<<<< HEAD
                 new Home(taiKhoan, maNV, tenNV, passNV).setVisible(true);
+=======
+                new Home().setVisible(true);
+>>>>>>> b13c9903dfa06dc1dce80d1b8ffbc8b91489c75b
             }
         });
     }

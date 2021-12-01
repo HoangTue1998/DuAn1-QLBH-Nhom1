@@ -289,7 +289,11 @@ public class Login extends javax.swing.JFrame {
                     userLogIn.setTenNhanVien(listStaff2.get(i).getTenNhanVien());
                     userLogIn.setVaiTro(true);
                  BoxDiaglog.alert(this, "Bạn đăng nhập thành công vai trò admin");
+<<<<<<< HEAD
                  Home home = new Home(taiKhoan,listStaff2.get(i).getMaNhanVien(),listStaff2.get(i).getTenNhanVien(), passw);
+=======
+                 Home home = new Home();
+>>>>>>> b13c9903dfa06dc1dce80d1b8ffbc8b91489c75b
                  home.setVisible(true);
                  return;
                 }
@@ -300,7 +304,11 @@ public class Login extends javax.swing.JFrame {
                     userLogIn.setTenNhanVien(listStaff2.get(i).getTenNhanVien());
                     userLogIn.setVaiTro(false);
                  BoxDiaglog.alert(this, "Bạn đăng nhập thành công vai trò nhân viên");  
+<<<<<<< HEAD
                  Home home = new Home(taiKhoan,listStaff2.get(i).getMaNhanVien(),listStaff2.get(i).getTenNhanVien(), passw);
+=======
+                 Home home = new Home();
+>>>>>>> b13c9903dfa06dc1dce80d1b8ffbc8b91489c75b
                  home.setVisible(true);
                  return;
                 }

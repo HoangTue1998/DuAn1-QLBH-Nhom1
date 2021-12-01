@@ -331,9 +331,12 @@
             </Property>
             <Property name="text" type="java.lang.String" value="B&#xe1;n h&#xe0;ng"/>
           </Properties>
+<<<<<<< HEAD
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
           </Events>
+=======
+>>>>>>> b13c9903dfa06dc1dce80d1b8ffbc8b91489c75b
         </Component>
         <Component class="javax.swing.JButton" name="btnNhanvien1">
           <Properties>

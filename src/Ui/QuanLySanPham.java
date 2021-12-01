@@ -47,7 +47,10 @@ public class QuanLySanPham extends javax.swing.JFrame {
 
     int index;
     int indexDetail;
+<<<<<<< HEAD
     public static String taiKhoan, maNV, tenNV, passNV;
+=======
+>>>>>>> b13c9903dfa06dc1dce80d1b8ffbc8b91489c75b
 
     public QuanLySanPham() {
 
@@ -635,7 +638,11 @@ public class QuanLySanPham extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:\
+<<<<<<< HEAD
         if (index < 0) {
+=======
+        if(index<0){
+>>>>>>> b13c9903dfa06dc1dce80d1b8ffbc8b91489c75b
             BoxDiaglog.alert(this, "Chọn sản phẩm");
             return;
         }
@@ -647,27 +654,42 @@ public class QuanLySanPham extends javax.swing.JFrame {
         int soLuong;
         int giaBan;
         int giaNhap;
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> b13c9903dfa06dc1dce80d1b8ffbc8b91489c75b
         try {
             giaBan = Integer.parseInt(giaBanDetail.getText());
         } catch (NumberFormatException e) {
             BoxDiaglog.alert(this, "Giá bán nhập không đúng định dạng số");
             return;
         }
+<<<<<<< HEAD
 
         try {
             soLuong = Integer.parseInt(soLuongDetail.getText());
+=======
+        
+        try {
+             soLuong = Integer.parseInt(soLuongDetail.getText());
+>>>>>>> b13c9903dfa06dc1dce80d1b8ffbc8b91489c75b
         } catch (NumberFormatException e) {
             BoxDiaglog.alert(this, "Số lượng nhập không đúng định dạng số");
             return;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> b13c9903dfa06dc1dce80d1b8ffbc8b91489c75b
         try {
             giaNhap = Integer.parseInt(giaDetail.getText());
         } catch (NumberFormatException e) {
             BoxDiaglog.alert(this, "Giá nhập không đúng định dạng số");
             return;
         }
+<<<<<<< HEAD
 
         ProductDetail pd = new ProductDetail(id, "bo di nhe", soLuong, giaNhap, giaBan, idProduct, null, idSize, idColor, true);
         //public ProductDetail(String maSanPhamChiTiet, String tenSanPham, int soLuong, int giaNhap, int giaBan, String maSanPham, String maTheLoai, int maSize, int maMau, boolean trangThai) {
@@ -676,6 +698,19 @@ public class QuanLySanPham extends javax.swing.JFrame {
         String nameColor = listColor.get(cbbMau.getSelectedIndex()).getTenMau();
         for (ProducDetailDTO x : listDetailDTO) {
             if (x.getSize().equals(nameSize) && x.getMau().equals(nameColor)) {
+=======
+         
+        
+        
+         
+        ProductDetail pd = new ProductDetail(id, "bo di nhe", soLuong, giaNhap, giaBan, idProduct, null, idSize, idColor, true);
+            //public ProductDetail(String maSanPhamChiTiet, String tenSanPham, int soLuong, int giaNhap, int giaBan, String maSanPham, String maTheLoai, int maSize, int maMau, boolean trangThai) {
+
+        String nameSize = listSize.get(cbbSize.getSelectedIndex()).getTenSize();
+        String nameColor = listColor.get(cbbMau.getSelectedIndex()).getTenMau();
+        for(ProducDetailDTO x: listDetailDTO){
+            if(x.getSize().equals(nameSize) && x.getMau().equals(nameColor)){
+>>>>>>> b13c9903dfa06dc1dce80d1b8ffbc8b91489c75b
                 BoxDiaglog.alert(this, "Màu và size đã tồn tài trong sản phẩm");
                 return;
             }
@@ -737,11 +772,20 @@ public class QuanLySanPham extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         String id = listDTO.get(index).getId();
+<<<<<<< HEAD
+=======
+       
+        
+>>>>>>> b13c9903dfa06dc1dce80d1b8ffbc8b91489c75b
 
         service.deleteSoft(id);
         listDTO.remove(index);
         loadTable(listDTO);
+<<<<<<< HEAD
         DefaultTableModel model = (DefaultTableModel) tbDetailProduct.getModel();
+=======
+        DefaultTableModel model = (DefaultTableModel)tbDetailProduct.getModel();
+>>>>>>> b13c9903dfa06dc1dce80d1b8ffbc8b91489c75b
         model.setRowCount(0);
         idDetail.setText("");
         giaBanDetail.setText("");
@@ -751,6 +795,10 @@ public class QuanLySanPham extends javax.swing.JFrame {
         textId.setText("");
         txtName.setText("");
         cboCategory.setSelectedIndex(0);
+<<<<<<< HEAD
+=======
+        
+>>>>>>> b13c9903dfa06dc1dce80d1b8ffbc8b91489c75b
 
 
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -764,7 +812,11 @@ public class QuanLySanPham extends javax.swing.JFrame {
         String name = txtName.getText();
         String idCategory = listCategory.get(cboCategory.getSelectedIndex()).getMaTheLoai();
         String nameCategory = listCategory.get(cboCategory.getSelectedIndex()).getTenTheLoai();
+<<<<<<< HEAD
         if (name.equals("")) {
+=======
+        if(name.equals("")){
+>>>>>>> b13c9903dfa06dc1dce80d1b8ffbc8b91489c75b
             BoxDiaglog.alert(this, "Tên không được để trống");
             return;
         }
@@ -778,11 +830,19 @@ public class QuanLySanPham extends javax.swing.JFrame {
 
             service.createProduct(newProduct);
             listDTO.add(new ProductDTO(id, name, nameCategory));
+<<<<<<< HEAD
             BoxDiaglog.alert(this, "Thêm mới thành công");
         } else {
             String idOLD = listDTO.get(index).getId();
             newProduct.setMaSanPham(idOLD);
 
+=======
+             BoxDiaglog.alert(this, "Thêm mới thành công");
+        } else {
+            String idOLD = listDTO.get(index).getId();
+            newProduct.setMaSanPham(idOLD);
+           
+>>>>>>> b13c9903dfa06dc1dce80d1b8ffbc8b91489c75b
             service.UpdateProduct(newProduct);
 
             listDTO.set(index, new ProductDTO(textId.getText(), name, nameCategory));
@@ -818,6 +878,7 @@ public class QuanLySanPham extends javax.swing.JFrame {
     }//GEN-LAST:event_lblImageMouseClicked
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+<<<<<<< HEAD
         // TODO add your handling code here:
         ProductBin thungRac = new ProductBin();
         thungRac.pack();
@@ -847,6 +908,37 @@ public class QuanLySanPham extends javax.swing.JFrame {
             service.deleteSoftProductDetail(idProduct);
             listDetailDTO.remove(indexDetail);
             BoxDiaglog.alert(this, "Xóa sản phẩm thành công!");
+=======
+        // TODO add your handling code here:
+        ProductBin thungRac = new ProductBin();
+        thungRac.pack();
+        thungRac.setVisible(true);
+        
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+        jfc.setDialogTitle("Chọn thư mục: ");
+        jfc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        int returnValue = jfc.showSaveDialog(null);
+        if (returnValue == JFileChooser.APPROVE_OPTION) {
+            if (jfc.getSelectedFile().isDirectory()) {
+                System.out.println("Bạn đã chọn: " + jfc.getSelectedFile());
+            }
+        }
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        if(indexDetail<0){
+            BoxDiaglog.alert(this, "Chọn sản phẩm cần xóa");
+        }else{
+            String idProduct = listDetailDTO.get(indexDetail).getMaSPCT();
+        service.deleteSoftProductDetail(idProduct);
+        listDetailDTO.remove(indexDetail);
+        BoxDiaglog.alert(this, "Xóa sản phẩm thành công!");
+>>>>>>> b13c9903dfa06dc1dce80d1b8ffbc8b91489c75b
             loadTableDetailProduct(listDetailDTO);
         }
         indexDetail = -1;
@@ -865,19 +957,33 @@ public class QuanLySanPham extends javax.swing.JFrame {
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
         String textSearch = txtSearch.getText();
+<<<<<<< HEAD
         List<Product> listProuduct = service.finbyName(textSearch);
         listDTO.clear();
         for (Product x : listProuduct) {
+=======
+        List<Product> listProuduct  = service.finbyName(textSearch);
+        listDTO.clear();
+        for(Product x: listProuduct){
+>>>>>>> b13c9903dfa06dc1dce80d1b8ffbc8b91489c75b
             ProductDTO dto = new ProductDTO();
             dto.setId(x.getMaSanPham());
             dto.setTenSanPham(x.getTenSanPham());
             dto.setLoaiSanPham(x.getMaTheLoai());
             listDTO.add(dto);
+<<<<<<< HEAD
 
         }
         loadTable(listDTO);
 
 
+=======
+            
+        }
+        loadTable(listDTO);
+        
+        
+>>>>>>> b13c9903dfa06dc1dce80d1b8ffbc8b91489c75b
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -894,7 +1000,11 @@ public class QuanLySanPham extends javax.swing.JFrame {
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
         Home home = new Home(taiKhoan, maNV, tenNV, passNV);
+=======
+        Home home = new Home();
+>>>>>>> b13c9903dfa06dc1dce80d1b8ffbc8b91489c75b
         home.setVisible(true);
     }//GEN-LAST:event_jButton12ActionPerformed
     ImageIcon icon;
